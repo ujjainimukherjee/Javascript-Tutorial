@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+		<script>
+			window.onload = function(){
+				var str1 = 'javascript ';
+				var str2 = 'tutorial';
+				var concat = str1 + str2;
+				document.getElementById('concat').innerHTML = concat;						
+				
+				var val1 = 123;
+				var val2 = '890.34';
+				var val3 = parseFloat(val2);
+				var result = val1 + val3;
+				document.getElementById('result').innerHTML = result;
+			}			
+		</script>
+		
+	</head>
+	<body>
+		<div id="concat"></div>
+		<div id="result"></div>		
+	</body>
+</html>
