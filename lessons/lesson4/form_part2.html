@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Form Elements</title>
+		<link href='style.css' type='text/css' rel='stylesheet' />
+	</head>
+	<body>
+		<form method='POST' action='test.html'>
+			<h1>Registration Form</h1>
+			<fieldset>
+				<legend>Name and email address</legend>
+				<dl>
+					<dd>						
+						<label for='firstname'>FirstName: </label>
+						<input type='text' name = 'firstname' required></input>
+					</dd>
+					<dd>						
+						<label for='lastname'>LastName: </label>
+						<input type='text' name = 'lastname' required></input>
+					</dd>
+					<dd>						
+						<label for='email'>Email: </label>
+						<input type='email' name = 'email' required></input>
+					</dd>
+				</dl>				
+			</fieldset>
+			<fieldset>
+				<legend>Address and Phone</legend>
+				<dd>						
+					<label for='address'>Address:</label>
+					<input type='text' name = 'address' required></input>
+				</dd>
+				<dd>											
+					<label for='state'>State</label>
+					<select name='state'>
+					  <option value="AL">AL</option>
+					  <option value="CA">CA</option>
+					  <option value="PO">PO</option>
+					  <option value="TX">TX</option>				 
+					</select> 
+				</dd>
+				<dd>						
+					<label for='zipcode'>ZipCode:</label>
+					<input type='text' name = 'zipcode' required></input>
+				</dd>
+				<dd>						
+					<label for='tel'>Telephone:</label>
+					<input type='tel' name = 'tel'></input>
+				</dd>
+			</fieldset>
+			<fieldset>
+				<legend>Other details</legend>
+				<dd>
+					<label for='sex'>Choose your gender:</label>
+					<input type="radio" name="sex" value="male">Male</input>
+                    <input type="radio" name="sex" value="female">Female</input>
+				</dd>
+				<dd>
+					<label for='comments'>Why you want to sign up :</label>
+					<textarea ></textarea>
+				</dd>				
+			</fieldset>
+			<input type='submit' value='SUBMIT' />
+		</form>
+	</body>
+</html>
