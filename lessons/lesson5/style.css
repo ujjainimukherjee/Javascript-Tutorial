@@ -1,0 +1,25 @@
+table{
+	border-collapse:collapse;
+	caption-side:bottom;
+	width:50%;
+}
+
+caption{
+	font-style:italic;
+}
+
+th{
+	background-color:#6E6E6E;
+	color:#FFFFFF;	
+	text-align:center;
+}
+
+tbody tr td{
+	text-align:center;
+	border:1px solid #6E6E6E;
+}
+
+tfoot tr td{
+	border:1px solid #6E6E6E;
+	text-align:center;
+}
