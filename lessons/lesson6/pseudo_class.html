@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing pseudo classes</title>
+		<style>
+			a:hover{
+				color:red;
+				text-decoration:none;
+			}			
+			.main-para span:first-child{
+				color:green;
+			}
+			.main-para span:last-child{
+				color:aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<a href="#">Link1</a>			
+		</p>
+		<p>
+			<a href="#">Link2</a>			
+		</p>
+		<p>
+			<a href="#">Link3</a>			
+		</p>
+		<p>
+			<a href="#">Link4</a>			
+		</p>
+		<p class='main-para'>
+			<span>This is first child</span>
+			<span>This is second child</span>
+			<span>This is last child</span>
+		</p>
+	</body>
+</html>
