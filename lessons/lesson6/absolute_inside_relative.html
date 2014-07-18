@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing absolute inside relative</title>
+		<style>
+			.main{
+				border:1px solid green;
+				width:400px;
+				height:400px;
+				position:relative;				
+			}
+			.left{
+				position:absolute;
+				top:0;
+				left:20px;
+				background-color:red;
+				width:50px;
+				height:50px;
+			   }
+		   .right{
+		   	   position:absolute;
+			   top:50%;
+			   right:-25px;
+			   background-color:red;
+			   width:50px;
+			   height:50px;
+			   }	   
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<div class='left'>
+				LEFT
+			</div>
+			<div class='right'>
+				RIGHT
+			</div>
+		</div>
+	</body>
+</html>
