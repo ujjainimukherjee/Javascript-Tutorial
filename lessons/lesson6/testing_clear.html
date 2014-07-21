@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing float for side by side placement</title>
+		<style>			
+			.left{
+				float:left;
+				background-color:gray;
+				width:30%;
+				color:white;				
+			}
+			.right{
+				float:left;
+				background-color:green;
+				width:30%;	
+				color:white;					
+			}
+			.last{				
+				clear:both;
+				background-color:aqua;				
+				color:white;				
+			}
+		</style>
+	</head>
+	<body>		
+		<div class='left'>
+			LEFT COLUMN
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut hendrerit orci. Vivamus luctus, metus at mattis fermentum, felis dolor volutpat leo, ut cursus lectus augue sit amet nibh. Curabitur orci metus, cursus in dignissim eu, dictum quis erat. In sed ipsum lobortis, lacinia nisl ut, pharetra ante. Sed quis massa sit amet metus adipiscing pharetra non ut dui. Curabitur at nulla non nibh sodales rhoncus at sed ipsum. Donec eu vulputate augue, vitae egestas mauris. Sed sed purus eu libero iaculis adipiscing. Donec eu facilisis nulla, sit amet fringilla metus.
+		</div>
+		<div class='right'>
+			RIGHT COLUMN
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut hendrerit orci. Vivamus luctus, metus at mattis fermentum, felis dolor volutpat leo, ut cursus lectus augue sit amet nibh. Curabitur orci metus, cursus in dignissim eu, dictum quis erat. In sed ipsum lobortis, lacinia nisl ut, pharetra ante. Sed quis massa sit amet metus adipiscing pharetra non ut dui. Curabitur at nulla non nibh sodales rhoncus at sed ipsum. Donec eu vulputate augue, vitae egestas mauris. Sed sed purus eu libero iaculis adipiscing. Donec eu facilisis nulla, sit amet fringilla metus.
+		</div>	
+		<div class='last'>
+			LAST COLUMN
+			This is the last column
+		</div>		
+	</body>
+</html>
