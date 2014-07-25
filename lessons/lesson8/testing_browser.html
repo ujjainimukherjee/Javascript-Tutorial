@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing browser name</title>
+		<script>
+			var browsername, userAgent = navigator.userAgent;			
+			alert(userAgent);
+			if (userAgent.indexOf('Firefox') > -1) {
+			    browsername = 'Firefox';
+			}else if (userAgent.indexOf('MSIE') > -1) {
+				browsername = 'Internet Explorer';				
+			}else if (userAgent.indexOf('Chrome') > -1) {
+				browsername = 'Chrome';	
+			}else if (userAgent.indexOf('Safari') > -1) {
+				browsername = 'Safari';
+			}
+			alert('The browser used is ' + browsername);			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
