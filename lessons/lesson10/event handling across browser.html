@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Event handling across all browsers</title>
+		<script>
+			function showalert(){
+				alert('you have clicked the button');
+			}
+			
+			function setup(){
+				var clickme = document.getElementById('clickme');
+				if (window.addEventListener){
+					clickme.addEventListener('click', showalert, false);
+				}else if (window.attachEvent){
+					clickme.attachEvent('onclick', showalert);
+				}
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<button id="clickme">CLICK ME</button>
+	</body>
+</html>
