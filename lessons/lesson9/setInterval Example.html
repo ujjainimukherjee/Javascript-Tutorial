@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Show Time using setInterval</title>
+		<style>
+			div{
+				margin:100px 100px;
+				color:BlueViolet;
+				font-weight:bold;
+			}
+		</style>
+		<script>
+			function showDateTime(){
+				document.getElementById('showtime').innerHTML = new Date();
+			}
+			
+			function setup(){
+				setInterval(showDateTime, 4000);
+			}
+			
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='showtime'>
+			TIME
+		</div>
+	</body>
+</html>
