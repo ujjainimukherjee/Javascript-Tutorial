@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing event target for IE6-8</title>
+		<script>
+			function showalert(event){
+				if (window.event){
+					alert(window.event.srcElement.id);
+				}else if (event){
+					alert(event.target.id);
+				}				
+			}
+			window.onload = function(){
+				var button1 = document.getElementById('button1');
+				if (window.addEventListener){
+					button1.addEventListener('click', showalert, false);		
+				}else if (window.attachEvent){
+					button1.attachEvent('onclick', showalert);
+				}
+						
+			}			
+		</script>
+	</head>
+	<body>
+		<button id='button1'>Click Me</button>
+	</body>
+</html>
