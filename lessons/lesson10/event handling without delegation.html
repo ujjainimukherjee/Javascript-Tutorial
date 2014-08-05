@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Event handling without delegation</title>
+		<style>
+			#mainlist li{			    
+			    height: 50px;
+			    text-align: center;
+			    vertical-align: middle;
+			    width: 100px;
+				color:white;
+			}
+			
+			#firstItem{
+				background-color:gray;
+			}
+			#secondItem{
+				background-color:pink;
+			}
+			#thirdItem{
+				background-color:aqua;
+			}
+			#fourthItem{
+				background-color:darksalmon;
+			}			
+		</style>
+		<script>
+			function showitemone(event){
+				alert(event.target.id);
+			}
+			function showitemtwo(event){
+				alert(event.target.id);
+			}
+			function showitemthree(event){
+				alert(event.target.id);
+			}
+			function showitemfour(event){
+				alert(event.target.id);
+			}
+			
+			function setup(){
+				document.getElementById('firstItem').addEventListener('click', showitemone, false);
+				document.getElementById('secondItem').addEventListener('click', showitemtwo, false);
+				document.getElementById('thirdItem').addEventListener('click', showitemthree, false);
+				document.getElementById('fourthItem').addEventListener('click', showitemfour, false);
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<ol id='mainlist'>
+			<li id='firstItem'>First Item</li>
+			<li id='secondItem'>Second Item</li>
+			<li id='thirdItem'>Third Item</li>
+			<li id='fourthItem'>Fourth Item</li>
+		</ol>
+	</body>
+</html>
