@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing mouse over and mouse out</title>
+		<style>
+			#main{
+				width:200px;
+				height:200px;
+				border:1px solid red;
+				background-color:darksalmon;
+				margin:100px 100px;
+				color:white;
+				display:table-cell;
+				text-align:center;
+				vertical-align:middle;			
+			}
+		</style>
+		<script>
+			function setup(){
+				var main = document.getElementById('main');
+				main.addEventListener('mouseover', function(){
+					main.style.backgroundColor = 'pink';
+				}, false)
+				
+				main.addEventListener('mouseout', function(){
+					main.style.backgroundColor = 'aqua';
+				}, false)
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			MAIN
+		</div>
+	</body>
+</html>
