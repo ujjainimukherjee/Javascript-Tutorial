@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing event stop propagation</title>
+		<style>
+			#main{
+				margin:100px 100px;
+				border:2px dotted darksalmon;
+				height:200px;
+				width:200px;							
+			}
+			#para1{
+				margin-top:30px;
+				height:100px;
+				width:200px;
+				background-color:gray;
+			}
+			#para2{
+				height:50px;
+				width:200px;
+				background-color:pink;
+			}
+		</style>	
+		<script>
+			window.onload = function(){
+				var main = document.getElementById('main');
+				main.addEventListener('click', function(){
+					alert('clicking on main');
+				}, false)
+				
+				var para1 = document.getElementById('para1');
+				para1.addEventListener('click', function(e){
+					alert(e.target.id);
+					e.stopPropagation();
+				}, false)
+				
+				var para2 = document.getElementById('para2');
+				para2.addEventListener('click', function(e){
+					alert(e.target.id);					
+				}, false)				
+			}
+		</script>	
+	</head>
+	<body>
+		<div id='main'>MAIN
+			<div id='para1'>para1</div>
+			<div id='para2'>para2</div>
+		</div>
+		
+	</body>
+</html>
