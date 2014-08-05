@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Child and parent nodes</title>
+		<script>
+			function setup(){
+				// getting the main document
+				alert('The main document node name is ' + document.nodeName + ' and parentNode is '+ document.parentNode);
+				// getting the HTML document
+				var children1 = document.children, len1 = children1.length;
+				for(var i=0;i<len1;i++){
+					alert("The main document child nodes are  " + children1[i].nodeName + " and it's parentNode is "  + children1[i].parentNode.nodeName);
+				}
+				// getting the main div
+				var main = document.getElementById('main');
+				var children2 = main.children, len2 = children2.length;
+				for(var i=0;i<len2;i++){
+					alert('The child nodes of main div are  ' + children2[i].nodeName + ' with id ' + children2[i].id);
+				}
+				
+				// getting child node of firstpara
+				var firstpara = document.getElementById('firstpara');
+				var children3 = firstpara.children, len3 = children3.length;
+				for(var i=0;i<len3;i++){
+					alert('The child nodes of main div are  ' + children3[i].nodeName + ' with id ' + children3[i].id);
+				}
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<p id='firstpara'>
+				<a href='#' id='testlink1'>Test Link 1</a>
+			</p>	
+			<p id='secondpara'>
+				<a href="#">Test Link 2</a>
+			</p>		
+		</div>
+	</body>
+</html>
