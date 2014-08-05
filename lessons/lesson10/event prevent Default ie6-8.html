@@ -2,13 +2,24 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Event prevent Default</title>
+		<title>Event prevent Default in IE6-8</title>
 		<script>
 			function stopAction(event){
-				event.preventDefault();				
+				if (window.event){
+					window.event.returnValue = false;
+				}else{
+					event.preventDefault();	
+				}
+							
 			}
 			window.onload = function(){
-				document.getElementById('milk').addEventListener('click', stopAction, false);
+				var milkOption = document.getElementById('milk');
+				if (window.addEventListener){
+					milkOption.addEventListener('click', stopAction, false);
+				}else if (window.attachEvent){
+					milkOption.attachEvent('onclick', stopAction);
+				}
+				
 			}
 		</script>
 	</head>
