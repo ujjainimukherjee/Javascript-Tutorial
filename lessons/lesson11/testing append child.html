@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing append child</title>
+		<style>
+			#main{
+				margin:100px 50px;
+				border:1px solid blue;
+				height:200px;
+				width:200px;
+			}
+		</style>
+		<script>
+			function addChildtoMain(){
+				var newpara = document.createElement('p');
+				var main = document.getElementById('main');
+				main.appendChild(newpara);
+				newpara.textContent = 'This is new para';
+			}
+			function setup(){
+				var addChildBtn = document.getElementById('addChild');
+				addChildBtn.addEventListener('click', addChildtoMain, false);
+			}
+				
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			
+		</div>
+		<div>
+			<button id='addChild'>Add Child</button>
+		</div>
+	</body>
+</html>
