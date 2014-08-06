@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing clone node</title>
+		<style>
+			#main{
+				margin:100px 50px;
+				border:1px solid blue;
+				height:200px;
+				width:200px;
+			}
+		</style>
+		<script>
+			function cloneNode(){
+				var para1 = document.getElementById('para1');
+				var clonepara = para1.cloneNode(true);				
+				var main = document.getElementById('main');
+				main.appendChild(clonepara);				
+			}
+			function setup(){
+				var cloneChildBtn = document.getElementById('cloneChild');
+				cloneChildBtn.addEventListener('click', cloneNode, false);
+			}
+				
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<p id='para1'>This is a paragraph</p>
+		</div>
+		<div>
+			<button id='cloneChild'>Clone Child</button>
+		</div>
+	</body>
+</html>
