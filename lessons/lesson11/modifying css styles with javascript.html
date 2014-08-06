@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Modifying CSS styles with javascript</title>
+		<style>
+			#main{
+				border:1px solid blue;
+				width:200px;
+				height:200px;
+				margin:100px 50px;
+			}
+		</style>
+		<script>
+			function changeStyleforMain(){
+				var main = document.getElementById('main');
+				main.style.backgroundColor = 'pink';
+				main.style.color = 'white';
+				main.style.textAlign = 'center';
+				main.style.fontWeight = 'bold';				
+			}
+			function setup(){
+				var changeStyleBtn = document.getElementById('changeStyle');
+				changeStyleBtn.addEventListener('click', changeStyleforMain, false);
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			THIS IS MAIN DIV
+		</div>
+		<div>
+			<button id='changeStyle'>Change Style</button>
+		</div>
+	</body>
+</html>
