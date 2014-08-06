@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing remove  child</title>
+		<style>
+			#main{
+				margin:100px 50px;
+				border:1px solid blue;
+				height:200px;
+				width:200px;
+			}
+		</style>
+		<script>
+			function removeChildtoMain(){
+				var para = document.getElementById('newpara');
+				var main = document.getElementById('main');
+				main.removeChild(para);				
+			}
+			function setup(){
+				var removeChildBtn = document.getElementById('removeChild');
+				removeChildBtn.addEventListener('click', removeChildtoMain, false);
+			}
+				
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<p id='newpara'>This is a paragraph</p>
+		</div>
+		<div>
+			<button id='removeChild'>Remove Child</button>
+		</div>
+	</body>
+</html>
