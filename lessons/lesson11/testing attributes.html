@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing attributes</title>
+		<style>
+			#main{
+				margin:100px 50px;
+				border:2px solid blue;
+				width:200px;
+				height:200px;
+			}
+		</style>
+		<script>
+			function getAttributeforLink(){
+				var link = document.getElementById('main-link');
+				var attribute = link.getAttribute('href');
+				alert(attribute);
+			}
+			function setAttributeforLink(){
+				var link = document.getElementById('main-link');
+				link.setAttribute('href', 'http://www.yahoo.com');				
+			}
+			function setup(){
+				var getAttributeBtn = document.getElementById('getAttributeBtn'),
+				    setAttributeBtn = document.getElementById('setAttributeBtn');				
+				getAttributeBtn.addEventListener('click', getAttributeforLink, false);
+				setAttributeBtn.addEventListener('click', setAttributeforLink, false);
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<a id='main-link' target = '_BLANK' href='http://www.jquery.com'>Main Link</a>
+		</div>
+		<div>
+			<button id='getAttributeBtn'>Get Attribute</button>
+		</div>
+		<div>
+			<button id='setAttributeBtn'>Set Attribute</button>
+		</div>
+	</body>
+</html>
