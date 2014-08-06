@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing node name without white spaces</title>
+		<script>
+			function setup(){
+				var main = document.getElementById('main');
+				var firstChildName = main.firstChild.nodeName;
+				alert(firstChildName);
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'><p id='firstpara'><a href='#' id='testlink1'>Test Link 1</a>
+			</p>	
+			<p id='secondpara'>
+				<a href="#">Test Link 2</a>
+			</p>		
+		</div>
+	</body>
+</html>
