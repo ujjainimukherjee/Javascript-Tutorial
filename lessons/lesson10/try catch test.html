@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing try catch</title>
+		<style>
+			.validate-btn-wrapper{
+				margin-top:20px;
+			}
+			.error-text{
+				color:red;				
+			}
+		</style>
+		<script>
+			
+			function validateForm(){
+				try {
+					document.forms['testform']['city'].value = 'new york';
+				} 
+				catch (ex) {
+					document.getElementById('error-text').innerHTML = ex.message;
+				}			
+			}
+			function setup(){
+				var testform = document.forms['testform'];				
+				testform['validate'].addEventListener('click', validateForm, false);				
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<form name='testform' action='newpage.html'>
+			<div>
+				<label for='zipcode'/>ZipCode
+			    <input type='text' name='zipcode'/>
+			</div>
+			<div>
+			<label for='error-text' id='error-text' class='error-text'/>
+			</div>
+			<div class='validate-btn-wrapper'>
+			    <input type='button' name = 'validate' value='validate' />
+			</div>
+		</form>
+	</body>
+</html>
