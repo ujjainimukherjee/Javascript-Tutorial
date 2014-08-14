@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing throw error</title>
+		<style>
+		    #main{
+		    	margin:100px 50px;
+		    }
+		    .btn-wrapper{
+		    	margin-top:20px;
+		    }
+		    #error-msg{
+		    	color:red;
+		    }
+
+		</style>	
+		<script>
+			function validateNumberOnly(){
+				document.getElementById('error-msg').style.display = 'none';
+				var numberOnly = document.getElementById('numberOnly');
+				try{
+					if (isNaN(numberOnly.value)){
+						throw new Error('Please enter a number only');
+					}	
+				}catch(ex){
+                    document.getElementById('error-msg').innerHTML = ex.message;
+                    document.getElementById('error-msg').style.display = 'block';
+				}
+
+			}
+
+			function setup(){
+				var validate = document.getElementById('validate');
+				validate.addEventListener('click', validateNumberOnly, false);
+			}
+		    window.onload = setup;
+
+		</script>	
+	</head>
+	<body>
+		<div id='main'>
+			<h1>Please enter numbers only </h1>
+		     <input type='text' id='numberOnly'/>
+		      <div class='btn-wrapper'>
+		     	<label id='error-msg' />
+		     </div>
+		     <div class='btn-wrapper'>
+		     	<input type='button' id='validate' value='validate' />
+		     </div>
+
+	    </div>
+	</body>
+</html>
