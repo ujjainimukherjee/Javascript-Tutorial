@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing POST method with AJAX</title>
+		<style>
+			#main{
+				margin:100px 100px;
+			}
+			.btn-wrapper{
+				margin-top:20px;
+			}
+			
+		</style>
+		<script>
+			function sendRequest(){
+				var xmlhttp=new XMLHttpRequest();
+				xmlhttp.onreadystatechange=function(){
+				  if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				  	   document.getElementById('address').innerHTML = xmlhttp.responseText;
+				    }
+				  }
+				xmlhttp.open("POST","testpage2.php",true);	
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				var address = '{"city":"santa clara","state":"california","zipcode":"94444"}';				
+				xmlhttp.send("address=" + address);
+			}
+			function setup(){
+				var btn = document.getElementById('post-button');
+				btn.addEventListener('click', sendRequest, false);
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<div id='address'></div>
+		</div>
+		<div class='btn-wrapper'>
+			<input type='button' value='MAKEAJAXCALL' id='post-button'/>
+		</div>
+	</body>
+</html>
