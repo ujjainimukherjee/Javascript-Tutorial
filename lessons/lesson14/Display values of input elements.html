@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Display values of input elements</title>
+		<style>
+			#first, #second,#third,#fourth{
+				width:500px;				
+				margin-bottom:20px;				
+			}
+		</style>
+		<script src='jquery-2.1.1.js' type='text/javascript'></script>
+		<script>
+			$(document).ready(function() {
+				document.getElementById('findValue').addEventListener('click', function(){
+					alert('The first name is ' + $('#firstname').val());
+					alert('The radio button selected is ' + $( 'input:radio[name=food]:checked').val());
+					alert('The message printed is ' + $('#message').val());
+				}, false)
+			});
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<div id='first'>
+				<label>First Name</label>
+			   <input id='firstname' />
+			</div>
+			<div id='second'>
+			   	<label>Food Names</label><br/>
+				<input name='food' type='radio' value='milk' />Milk</input><br/>
+				<input name='food' type='radio' value='bread' />Bread</input>
+			</div>
+			<div id='third'>
+			   	<label>Message</label>
+				<textarea id='message'>					
+				</textarea>
+			</div>			
+			<div class='button-wrapper'>
+				<input type='button' value='FIND VALUE' id='findValue'/>
+			</div>
+		</div>		
+	</body>
+</html>
