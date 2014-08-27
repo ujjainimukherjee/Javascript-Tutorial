@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Change content of elements</title>
+		<style>			
+			#main{
+				margin:100px 100px;
+			}
+			
+			#first, #second,#third,#fourth{
+				width:200px;
+				height:20px;
+				margin-bottom:20px;
+				background-color:gold;
+			}
+		</style>
+		<script src='jquery-2.1.1.js' type='text/javascript'></script>
+		<script>
+			$(document).ready(function() {
+				document.getElementById('changeContent').addEventListener('click', function(){
+					$('#first').html('THIS IS FIRST DIV');
+					$('#second').html('THIS IS SECOND DIV');
+					$('#third').html('THIS IS THIRD DIV');
+					$('#fourth').html('THIS IS FOURTH DIV');
+				}, false)
+			});
+		</script>		
+	</head>
+	<body>
+		<div id='main'>
+			<div id='first'>
+			   
+			</div>
+			<div id='second'>
+			   	
+			</div>
+			<div id='third'>
+			   	
+			</div>
+			<div id='fourth'>
+			   	
+			</div>
+			<div class='button-wrapper'>
+				<input type='button' value='CHANGE CONTENT' id='changeContent'/>
+			</div>
+		</div>
+	</body>
+</html>
