@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Selecting elements with jQuery</title>
+		<style>
+			
+			#main{
+				margin:100px 100px;
+			}
+			
+			#first, .gold, .aqua{
+				width:200px;
+				height:20px;
+				margin-bottom:20px;
+			}
+			
+			
+		</style>
+		<script src='jquery-2.1.1.js' type='text/javascript'></script>
+		<script>
+			$(document).ready(function() {
+				document.getElementById('changeColor').addEventListener('click', function(){
+					$('#first').css('background-color', 'LightBlue');
+					$('.gold').css('background-color', 'gold');
+					$('.aqua').css('background-color', 'aqua');
+				}, false)
+			});
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<div id='first'>
+			   THIS IS FIRST DIV	
+			</div>
+			<div class='gold'>
+			   THIS IS SECOND DIV	
+			</div>
+			<div class='aqua'>
+			   THIS IS THIRD DIV	
+			</div>
+			<div class='gold'>
+			   THIS IS FOURTH DIV	
+			</div>
+			<div class='button-wrapper'>
+				<input type='button' value='CHANGE COLOR' id='changeColor'/>
+			</div>
+		</div>
+	</body>
+</html>
