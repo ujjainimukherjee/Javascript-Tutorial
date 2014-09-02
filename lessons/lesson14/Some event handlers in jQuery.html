@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Some event handlers in Jquery</title>
+		<style>
+			#main{
+				margin:100px 100px;
+			}
+			.input-wrapper{
+				margin-bottom:20px;
+			}
+			.firstname-error{
+				display:none;
+				color:red;
+			}
+		</style>
+		<script src='jquery-2.1.1.js' type='text/javascript'></script>
+		<script>			
+			$(document).ready(function() {
+				$('#firstname').focus(); // places focus on firstname
+				$('#firstname').blur(function(){
+					if ($('#firstname').val() == ''){
+						$('.firstname-error').show();
+					}else{
+						$('.firstname-error').hide();
+					}
+				})
+				$('#go-home').hover(function(){
+					$('#go-home').css('color', 'cyan');
+				    },
+					function(){
+						$('#go-home').css('color', 'blue');
+					}
+				)
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id='main'>
+			<div class='input-wrapper'>
+				<label for='firstname'>FirstName</label>
+				<input type='text' id='firstname' />
+				<span class='firstname-error'>Please enter first name</span>
+			</div>
+			<div class='input-wrapper'>
+				<label for='lastname'>LastName</label>
+				<input type='text' id='lastname' />
+			</div>
+			<div class='input-wrapper'>
+				<a href='#' id='go-home'>Go To Home</a>
+			</div>			
+		</div>
+	</body>
+</html>
