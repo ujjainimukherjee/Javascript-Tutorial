@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>DOM manipulation methods</title>
+		<script src='jquery-2.1.1.js' type='text/javascript'></script>
+		<script>
+			$(document).ready(function() {
+				$('#addTitleButton').click(function(){
+					$('#mainlist').before('<div>Testing DOM methods</div>');
+				})
+				
+				$('#addFirstListItemButton').click(function(){
+					$('#mainlist').prepend('<li>First List Item</li>');
+				})
+				
+				$('#addLastListItemButton').click(function(){
+					$('#mainlist').append('<li>Last List Item</li>');
+				})
+				
+				$('#removeListItemOneButton').click(function(){
+					$('#list-one').remove();
+				})
+				$('#changeListItemTwoContentButton').click(function(){
+					$('#list-two').html('List Item Two Content changed');
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<ul id='mainlist'>
+			<li id='list-one'>List Item 1</li>
+			<li id='list-two'>List Item 2</li>
+			<li>List Item 3</li>			
+		</ul>
+		<div>
+			<input type='button' value='ADD TITLE' id='addTitleButton' />
+			<input type='button' value='ADD FIRST LIST ITEM' id='addFirstListItemButton' />
+			<input type='button' value='ADD LAST LIST ITEM' id='addLastListItemButton' />
+			<input type='button' value='REMOVE LIST ITEM ONE' id='removeListItemOneButton' />
+			<input type='button' value='CHANGE LIST ITEM TWO' id='changeListItemTwoContentButton' />
+		</div>
+		
+	</body>
+</html>
