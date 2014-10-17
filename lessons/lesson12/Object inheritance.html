@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Object inheritance</title>
+		<script>
+			function setup(){
+				function Person(firstname){
+					this.firstname = firstname;
+				}
+				
+				function Student(firstname, subject){
+					Person.call(this, firstname);
+					this.subject = subject;
+				}
+				
+				var student = new Student('Susan', 'Math');
+				
+			}
+			window.onload = setup;
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
