@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Testing Local Storage</title>
+		<style>
+			table{
+				border-collapse:collapse;
+			}
+			table tr td{
+				border:2px solid gold;
+				padding:3px;
+				cursor:pointer;
+			}
+			.pink{
+				background-color:pink;
+			}
+		</style>
+		<script type='text/javascript' src='jquery-2.1.1.js'></script>
+		<script>
+			$(function(){				
+				if (sessionStorage.length !=  0){					
+					for (var i = 0; i < sessionStorage.length; i++){
+						var val = sessionStorage.getItem(sessionStorage.key(i));
+						var item = sessionStorage.key(i);
+						if (val == 'true'){
+							$('#' + item).addClass('pink');
+						}else{
+							$('#' + item).removeClass('pink');
+						}
+    
+                      }					
+				}
+				
+				$('td').click(function(){
+					if ($(this).hasClass('pink')){
+						$(this).removeClass('pink');
+						var elmid = $(this).prop('id');
+						sessionStorage[elmid] = false;						
+					}else{
+						$(this).addClass('pink');
+						var elmid = $(this).prop('id');
+						sessionStorage[elmid] = true;
+						
+					}				
+			   })		
+				
+			})();
+			
+		</script>		
+	</head>
+	<body>
+		<p>Select websites</p>
+		<table>
+			<tr>
+				<td id='youtube'>Youtube</td>
+				<td id='google'>Google</td>
+				<td id='amazon'>Amazon</td>
+			</tr>
+		</table>
+	</body>
+</html>
