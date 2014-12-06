@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Testing Canvas Elements</title>
+		<style>
+			.clr{
+				clear:both;
+			}
+		</style>
+		<script type='text/javascript' src='jquery-2.1.1.js'></script>
+	</head>
+
+	<body>
+		<canvas width="400" height="400" style="border:2px solid red;" id="maincanvas"></canvas>
+		<div class="clr">
+			<input type="button" value="Draw Red Rectangle" id="redRec"/>
+		</div>
+		
+		<script>
+		$(function(){				
+				$('#redRec').click(function(){
+					var  maincanvas = document.getElementById("maincanvas");
+					var context1 = maincanvas.getContext("2d");
+					context1.fillStyle = "#FF0000";
+					context1.fillRect(10, 10, 200, 200);
+					})
+				})();					
+		</script>
+		
+	</body>
+</html>
