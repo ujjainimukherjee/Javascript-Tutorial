@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Drawing line on canvas</title>
+		<style>
+			.clr{
+				clear:both;
+			}
+			.redBorder{
+				border:2px solid red;
+			}
+		</style>
+		<script type='text/javascript' src='jquery-2.1.1.js'></script>
+	</head>
+
+	<body>
+		<canvas width="600" height="400" class="redBorder" id="maincanvas"></canvas>
+		<div class="clr">
+			<input type="button" value="Draw Straight Line" id="drawLine"/>
+		</div>		
+		<script>
+		$(function(){				
+				$('#drawLine').click(function(){
+					var  maincanvas = document.getElementById("maincanvas");
+					var context1 = maincanvas.getContext("2d");						
+					context1.beginPath();
+				    context1.moveTo(10, 40);
+				    context1.lineTo(500, 90);
+				    context1.strokeStyle = '#0000FF';
+				    context1.stroke();				    
+					})
+				})();					
+		</script>
+		
+	</body>
+</html>
