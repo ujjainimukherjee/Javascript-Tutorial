@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Drawing circle on canvas</title>
+		<style>
+			.clr{
+				clear:both;
+			}
+			.redBorder{
+				border:2px solid red;
+			}
+		</style>
+		<script type='text/javascript' src='jquery-2.1.1.js'></script>
+	</head>
+
+	<body>
+		<canvas width="600" height="400" class="redBorder" id="maincanvas"></canvas>
+		<div class="clr">
+			<input type="button" value="Draw Circle" id="drawCircle"/>
+		</div>		
+		<script>
+		$(function(){				
+				$('#drawCircle').click(function(){
+					var  maincanvas = document.getElementById("maincanvas");
+					var context = maincanvas.getContext("2d");					
+                    var radius = 100;	
+                    var startAngle = 0;
+                    var endAngle = 2 * Math.PI;
+                    var counterClockwise = false;
+                    context.beginPath();
+                    context.arc(300,200, radius, startAngle, endAngle, counterClockwise);
+                    context.fillStyle = '#7FFF00';
+                    context.fill();
+                    context.lineWidth = 3;
+                    context.strokeStyle = '#483D8B';
+                    context.stroke();		    
+					})
+				})();					
+		</script>
+		
+	</body>
+</html>
