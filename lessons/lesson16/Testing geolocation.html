@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Testing geolocation</title>
+		<script type='text/javascript' src='modernizr.js'></script>
+	</head>
+
+	<body>
+		<p>
+			<button onclick="showMyLoc()">
+				Show my location
+			</button>
+		</p>
+		<div id="showmap"></div>
+		<script>
+			function showMyLoc() {
+				var map = document.getElementById("showmap");
+				if (!Modernizr.geolocation) {
+					map.innerHTML = "Geolocation is not supported by your browser";
+					return;
+				}
+
+				function success(position) {
+					var latitude = position.coords.latitude;
+					var longitude = position.coords.longitude;
+
+					map.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+					var img = new Image();
+					img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+					map.appendChild(img);
+				}
+
+				function error() {
+					map.innerHTML = "Unable to retrieve your location";
+				};
+
+				map.innerHTML = "<p>Locating</p>";
+				navigator.geolocation.getCurrentPosition(success, error);
+			}
+		</script>
+	</body>
+</html>
